@@ -1,0 +1,17 @@
+7 - 1 = a
+6 - 1 = c => f 
+8 - 1 - 2 = e 
+8 - 2 - 0 = d
+0 - 4 = d => b from 4
+8 => g?
+
+
+ aaaa
+b    c
+b    c
+b    c
+ dddd
+e    f
+e    f
+e    f
+ gggg

@@ -1,0 +1,84 @@
+import sys
+
+def readFile(filename):
+    file = open(filename, 'r')
+    lines = file.readlines()
+    return lines
+
+def isMin(i, j, smokeFlowMatrixMins)
+    if (i >= 0 and i<= 100 and j>=0 and j<=100)
+        if str(smokeFlowMatrixMins[i][j]) != ' ':
+            return True
+    return False
+
+def findMin(i, jsmokeFlowsMatrix, smokeFlowMatrixMins)
+    for k in range(0, 4):
+        next_i = i + x_move[k]
+        next_j = j + y_move[k]
+            if i == 0 and j == 0:
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i+1][j]:
+                    smokeFlowMatrixMins[i+1][j]= smokeFlowsMatrix[i+1][j]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j+1]:
+                    smokeFlowMatrixMins[i][j+1] = smokeFlowsMatrix[i][j+1]
+            elif i == 0 and j == 99:
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i+1][j]:
+                    smokeFlowMatrixMins[i+1][j] = smokeFlowsMatrix[i+1][j]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j-1]:
+                    smokeFlowMatrixMins[i][j-1] = smokeFlowsMatrix[i][j-1]
+            elif i == 0 and j != 0:
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j+1]:
+                    smokeFlowMatrixMins[i][j+1] = smokeFlowsMatrix[i][j+1]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j-1]:
+                    smokeFlowMatrixMins[i][j-1]= smokeFlowsMatrix[i][j-1]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i+1][j]:
+                    smokeFlowMatrixMins[i+1][j] = smokeFlowsMatrix[i+1][j]
+            elif i == 99 and j == 99:
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i-1][j]:
+                    smokeFlowMatrixMins[i-1][j] = smokeFlowsMatrix[i-1][j]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j-1]:
+                    smokeFlowMatrixMins[i][j-1] = smokeFlowsMatrix[i][j-1]
+            elif i != 0 and j == 99:
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i-1][j]:
+                    smokeFlowMatrixMins[i-1][j] = smokeFlowsMatrix[i-1][j]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j-1]:
+                    smokeFlowMatrixMins[i][j-1] = smokeFlowsMatrix[i][j-1]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i+1][j]:
+                    smokeFlowMatrixMins[i+1][j] = smokeFlowsMatrix[i+1][j]
+            elif i == 99 and j == 0:
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i-1][j]:
+                    smokeFlowMatrixMins[i-1][j] = smokeFlowsMatrix[i-1][j]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j+1]:
+                    smokeFlowMatrixMins[i][j+1] = smokeFlowsMatrix[i][j+1]
+            elif i == 99 and j != 0:
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i-1][j]:
+                    smokeFlowMatrixMins[i-1][j] = smokeFlowsMatrix[i-1][j]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j+1]:
+                    smokeFlowMatrixMins[i][j+1] = smokeFlowsMatrix[i][j+1]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j-1]:
+                    smokeFlowMatrixMins[i][j-1] = smokeFlowsMatrix[i][j-1]
+            else:
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j+1]:
+                    smokeFlowMatrixMins[i][j+1] = smokeFlowsMatrix[i][j+1]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i][j-1]:
+                    smokeFlowMatrixMins[i][j-1] = smokeFlowsMatrix[i][j-1]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i+1][j]:
+                    smokeFlowMatrixMins[i+1][j] = smokeFlowsMatrix[i+1][j]
+                if smokeFlowsMatrix[i][j] > smokeFlowsMatrix[i-1][j]:
+                    smokeFlowMatrixMins[i-1][j] = smokeFlowsMatrix[i-1][j]
+        print(f"{('').join(map(str,smokeFlowMatrixMins[i]))}")
+        #print(f"{('').join(map(str,smokeFlowsMatrix[i]))}")
+
+    return []
+
+if __name__ == '__main__':
+    smokeFlows = readFile("input")
+    smokeFlowsMatrix = [ [] for _ in range(100)]
+    smokeFlowMatrixMins = [ [' ' for _ in range(100)] for _ in range(100)]
+    for i,smokeFlow in enumerate(smokeFlows):
+        smokeFlowsMatrix[i] = [int(x) for x in smokeFlow.strip()]
+#        print(f"{smokeFlowsMatrix[i]}")
+    findMin(0, 0, smokeFlowsMatrix, smokeFlowMatrixMins)
+    smokeFlowList = findMins(smokeFlowsMatrix, smokeFlowMatrixMins)
+
+
+     

@@ -1,0 +1,51 @@
+
+
+def readFile(filename):
+    file = open(filename, 'r')
+    lines = file.readlines()
+    return lines
+
+if __name__ == '__main__':
+    wirings = readFile("input")
+#    digits = ["gcebaf", "cf", "egadc", "dfgca", "bcdf", "gadfb", "gadebf", "cgbaedf", "acf","gbdcfa"]
+    digits = ["cagedb", "ab", "gcdfa", "fbcad", "eafb", "cdfbe", "cdfgeb", "dab", "acedgfb", "cefabd"]
+    #digitsConversion = {'a':'d', 'c':'a', 'f':'b', 'b':'e', 'e':'g', 'g':'c', 'd':'f'}
+    sumDigits = 0
+    for i, wiring in enumerate(wirings):
+        wires, fourDigits = wiring.strip().split('|')
+        print(f"--- {wires.split()} - {fourDigits.split()}\n{digits}")
+        digitsCount = 0
+        digitsNumber = []
+        # creating dictionary
+        for digitOutput in [x for x in fourDigits.split() if len(x) in [2, 3, 4, 7]]:
+            print(f"-> searching {digitOutput} in {wires.split()} muss match length")
+            digitsConverions = {}
+            for matchingPattern in [wireSignalPattern 
+                                    for wireSignalPattern in wires.split()
+                                    if len(wireSignalPattern) == len(digitOutput)
+                                    ]:
+                print(f"Output: {digitOutput} {len(digitOutput)} found {matchingPattern}")
+                matched = True
+                for char in list(digitOutput):
+                    print(f"{digitOutput} {char} in {matchingPattern}")
+                    if matchingPattern.count(char) > 1 or matchingPattern.count(char) == 0:
+                        print("Output in pattern False break")
+                        matched = False
+                        break
+                if matched:
+                    matchedDigit = [x for x in digits if len(x) == matchingPattern]
+                    print(f"{matchedDigiti}")
+                    for char in list(matchedDigit):
+                        print(f"digit: {char}")
+
+            # using dictionary
+
+            if digitsCount == 4:
+                print(f"{digitsNumber}")
+                sumDigits += int(('').join(map(str,digitsNumber)))
+            print("<-")
+            print(f"{digitsNumber}")
+        print(f"---")
+
+    print(f"{sumDigits}")
+
