@@ -105,7 +105,7 @@ int main(void)
         std::cout << '\n';
     }
 
-    std::cout << "What would your total score be if everything goes exactly according to your strategy guide?"; 
+    std::cout << "What would your total score be if everything goes exactly according to your strategy guide? "; 
     std::cout << score;
 
 }
