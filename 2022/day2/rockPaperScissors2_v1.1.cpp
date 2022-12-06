@@ -57,7 +57,7 @@ int main(void)
         loseWin = (mySelf+2)%3;
         amount = (elf+1)%3+1;
         realLoseWin = 3 * (loseWin);
-        amount = ((realLoseWin+amount+mySelf)%3 + 1);//(elf+1)%3+1;
+        amount = ((realLoseWin+amount+mySelf)%3 + 1);
         // realLoseWin values
         // 0 lose
         // 3 draw 
