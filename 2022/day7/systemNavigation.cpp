@@ -90,8 +90,7 @@ int main(void)
                 fileNameDir = commandParts;
                 std::cout <<"fileNameDir added to path -" << fileNameDir<< "-\n";
                 if (fileNameDir == ".."){
-                    if (systemCurrentPathSize[systemPathLevel] <= 100000)
-                    {
+                    if (systemCurrentPathSize[systemPathLevel] <= 100000){
                         totalFileSize += systemCurrentPathSize[systemPathLevel];
                         std::cout << "adding to total " << totalFileSize << "\n";
                     }
@@ -160,6 +159,10 @@ int main(void)
 //        std::cout << "file Size in dir: " << dirFileSize << std::endl;
         if (fileSize != 0)
             dirFileSize += fileSize;
+    }
+    if (systemCurrentPathSize[systemPathLevel] <= 100000){
+        totalFileSize += systemCurrentPathSize[systemPathLevel];
+        std::cout << "adding to total " << totalFileSize << "\n";
     }
     
     std::cout << "What is the sum of the total sizes of those directories? ";
