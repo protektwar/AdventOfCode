@@ -84,7 +84,7 @@ int main(void)
             if (spriteLower < 0)
                 spriteLower = 0;
             if (spriteUpper > 39)
-                spriteLower = 39;
+                spriteUpper = 39;
             std::cout << "spriteCol: " << spriteCol <<" crtRow: " << crtRow << " crtCol: " << crtCol << std::endl;
             std::cout << "spriteLower: " << spriteLower << " " << crtCol <<" spriteUpper: " << spriteUpper << std::endl;
             std::cout << (spriteLower >= crtCol) << " " << (crtCol <= spriteUpper) << std::endl;
