@@ -7,3 +7,4 @@
 ./2021/day9/lavaTubes
 ./2022/day1/calorieCounting2
 ./2022/day1/calorieCounting
+*.bak*
