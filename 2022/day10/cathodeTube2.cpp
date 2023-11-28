@@ -49,7 +49,7 @@ int main(void)
 
     for (i = 0; i < N; i++)
         for (j = 0; j < M; j++)
-            crtImage[i][j] = '#';
+            crtImage[i][j] = '@';
 
     asmCode = readFile((char*)"input");
     while (getline (asmCode, instructionLine, '\n')) {
@@ -91,12 +91,12 @@ int main(void)
             if ((spriteLower <= crtCol) && (crtCol <= spriteUpper))
             {
                 std::cout << "putPixel" << std::endl;
-                crtImage[crtRow][crtCol] = '#';
+                crtImage[crtRow][crtCol] = '@';
             }
             else
             {
                 std::cout << "delPixel" << std::endl;
-                crtImage[crtRow][crtCol] = '.';
+                crtImage[crtRow][crtCol] = '-';
             }
             displayCrt(crtImage);
         }
